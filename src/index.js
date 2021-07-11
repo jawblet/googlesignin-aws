@@ -6,7 +6,6 @@ import config from './aws-exports';
 
 const isLocalhost = !!(window.location.hostname === "localhost");
 
-console.log(isLocalhost);
 const [
   productionRedirectSignIn,
   localRedirectSignIn,

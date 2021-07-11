@@ -11,17 +11,16 @@ const [user, setUser] = useState(null);
 const [loading, setLoading] = useState(true);
 
 async function getUser() {
-try {
-const token = await Auth.currentAuthenticatedUser();
-setLoading(false);
-setUser(token);
+  try {
+    const token = await Auth.currentAuthenticatedUser();
+    setLoading(false);
+    setUser(token);
 } catch(err) {
-console.log(err);
-setLoading(false);
+    console.log(err);
+    setLoading(false);
 }
 }
 
-//check user on load, sign in, sign out
 useEffect(() => {
 Hub.listen('auth', ({ payload }) => {
 if (payload.event === 'signIn') {
